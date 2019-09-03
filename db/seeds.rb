@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Restaurant.destroy_all
+User.destroy_all
+
+user = User.create(email: "lewagon@lewagon.pt", password: "123456")
+
+
+3.times do
+  Restaurant.create(name: "Restaurant-#{rand(1..100)}",address: "Lisbon", user: user )
+
+end
